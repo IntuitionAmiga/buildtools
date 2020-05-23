@@ -1101,7 +1101,6 @@ case "${targ}" in
   powerpc-*-haiku*)
     targ_defvec=powerpc_elf32_vec
     targ_selvecs="rs6000_xcoff_vec powerpc_elf32_le_vec pef_vec pef_xlib_vec powerpc_xcoff_vec powerpc_boot_vec"
-    targ_cflags=-D__HAIKU_TARGET__
     ;;
 #ifdef BFD64
   powerpc64-*-aix5.[01])
@@ -1149,6 +1148,11 @@ case "${targ}" in
   powerpc64le-*-freebsd*)
     targ_defvec=powerpc_elf64_fbsd_le_vec
     targ_selvecs="powerpc_elf64_vec powerpc_elf32_vec powerpc_elf32_fbsd_vec powerpc_elf32_le_vec rs6000_xcoff_vec rs6000_xcoff64_vec rs6000_xcoff64_aix_vec"
+    want64=true
+    ;;
+  powerpc64-*-haiku*)
+    targ_defvec=powerpc_elf64_vec
+    targ_selvecs="powerpc_elf64_le_vec powerpc_elf32_vec powerpc_elf32_le_vec rs6000_xcoff_vec rs6000_xcoff64_vec rs6000_xcoff64_aix_vec"
     want64=true
     ;;
   powerpc64-*-elf* | powerpc-*-elf64* | powerpc64-*-linux* | \

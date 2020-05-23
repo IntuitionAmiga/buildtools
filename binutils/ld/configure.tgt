@@ -795,6 +795,8 @@ powerpc-*-beos*)	targ_emul=aixppc
 			;;
 powerpc-*-haiku*)	targ_emul=elf32ppchaiku
 			;;
+powerpc64-*-haiku*)	targ_emul=elf64ppchaiku
+			;;
 powerpc-*-windiss*)	targ_emul=elf32ppcwindiss
 			;;
 pru*-*-*)		targ_emul=pruelf
