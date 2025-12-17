@@ -154,12 +154,12 @@ execcmd(
 
 	/* Trim leading, ending white space */
 
-	while( isspace( *string ) )
+	while( isspace( (unsigned char)*string ) )
 		++string;
 
 	p = strchr( string, '\n' );
 
-	while( p && isspace( *p ) )
+	while( p && isspace( (unsigned char)*p ) )
 		++p;
 
 	/* If multi line, or too long, or JAMSHELL is set, write to bat file. */

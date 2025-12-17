@@ -287,7 +287,7 @@ yylex()
 	    {
 		/* Skip past white space */
 
-		while( c != EOF && isspace( c ) )
+		while( c != EOF && isspace( (unsigned char)c ) )
 			c = yychar();
 
 		/* Not a comment?  Swallow up comment line. */
@@ -315,7 +315,7 @@ yylex()
 	    while( 
 		c != EOF &&
 		b < buf + sizeof( buf ) &&
-		( inquote || !isspace( c ) ) )
+		( inquote || !isspace( (unsigned char)c ) ) )
 	    {
 		if( c == '"' )
 		{
@@ -369,7 +369,8 @@ yylex()
 	    *b = 0;
 	    yylval.type = ARG;
 
-	    if( !notkeyword && !( isalpha( *buf ) && scanmode == SCAN_PUNCT ) )
+	    if( !notkeyword &&
+		!( isalpha( (unsigned char)*buf ) && scanmode == SCAN_PUNCT ) )
 	    {
 		for( k = keywords; k->word; k++ )
 		    if( *buf == *k->word && !strcmp( k->word, buf ) )

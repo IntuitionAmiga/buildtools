@@ -35,7 +35,7 @@ getoptions(
     {
 	char *arg;
 
-	if( argv[i][0] != '-' || !isalpha( argv[i][1] ) )
+	if( argv[i][0] != '-' || !isalpha( (unsigned char)argv[i][1] ) )
 	    break;
 
 	if( !optc-- )

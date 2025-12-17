@@ -72,7 +72,7 @@ timestamp(
 	char path[ MAXJPATH ];
 	char *p = path;
 
-	do *p++ = tolower( *target );
+	do *p++ = tolower( (unsigned char)*target );
 	while( *target++ );
 
 	target = path;
@@ -175,7 +175,7 @@ time_enter(
 	char path[ MAXJPATH ];
 	char *p = path;
 
-	do *p++ = tolower( *target );
+	do *p++ = tolower( (unsigned char)*target );
 	while( *target++ );
 
 	target = path;

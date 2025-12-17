@@ -538,11 +538,11 @@ var_edit_shift(
 	if( edits->upshift )
 	{
 	    for( ; *out; ++out )
-		*out = toupper( *out );
+		*out = toupper( (unsigned char)*out );
 	}
 	else if( edits->downshift )
 	{
 	    for( ; *out; ++out )
-		*out = tolower( *out );
+		*out = tolower( (unsigned char)*out );
 	}
 }

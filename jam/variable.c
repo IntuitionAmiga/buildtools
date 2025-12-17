@@ -152,7 +152,7 @@ var_string(
 
 	    /* Copy white space */
 
-	    while( isspace( *in ) )
+	    while( isspace( (unsigned char)*in ) )
 	    {
 		if( out >= oute )
 		    return -1;
@@ -164,7 +164,7 @@ var_string(
 
 	    /* Copy non-white space, watching for variables */
 
-	    while( *in && !isspace( *in ) )
+	    while( *in && !isspace( (unsigned char)*in ) )
 	    {
 	        if( out >= oute )
 		    return -1;

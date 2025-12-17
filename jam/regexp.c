@@ -917,16 +917,16 @@ regmatch( char *prog )
 			break;
 		case WORDA:
 			/* Must be looking at a letter, digit, or _ */
-			if ((!isalnum(*reginput)) && *reginput != '_')
+			if ((!isalnum((unsigned char)*reginput)) && *reginput != '_')
 				return(0);
 			/* Prev must be BOL or nonword */
 			if (reginput > regbol &&
-			    (isalnum(reginput[-1]) || reginput[-1] == '_'))
+			    (isalnum((unsigned char)reginput[-1]) || reginput[-1] == '_'))
 				return(0);
 			break;
 		case WORDZ:
 			/* Must be looking at non letter, digit, or _ */
-			if (isalnum(*reginput) || *reginput == '_')
+			if (isalnum((unsigned char)*reginput) || *reginput == '_')
 				return(0);
 			/* We don't care what the previous char was */
 			break;
