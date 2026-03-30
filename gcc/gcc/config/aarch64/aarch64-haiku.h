@@ -68,4 +68,10 @@
 #define LINK_SPEC "-m " TARGET_LINKER_EMULATION " %{!r:-shared} %{nostart:-e 0} %{shared:-e 0} %{!shared: %{!nostart: -no-undefined}}\
 	%{mbig-endian:-EB} %{mlittle-endian:-EL} " CA53_ERR_835769_SPEC " " CA53_ERR_843419_SPEC " -X"
 
+#undef CC1_SPEC
+#define CC1_SPEC \
+	HAIKU_CC1_SPEC \
+	"%{!fomit-frame-pointer: -fno-omit-frame-pointer} \
+	%{!mtls-dialect: -mtls-dialect=trad}"
+
 #endif  /* GCC_AARCH64_HAIKU_H */
